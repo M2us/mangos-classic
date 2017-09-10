@@ -6,7 +6,7 @@ os: Visual Studio 2015
  
 # build platform, i.e. Win32 (instead of x86), x64, Any CPU. This setting is optional.
 platform:
-  - x64
+  - Win32
 
 # specify custom environment variables
 environment:
@@ -17,7 +17,7 @@ environment:
   BOOST_LIBRARYDIR_WIN64: C:\Libraries\boost_1_63_0\lib64-msvc-14.0
   SNAPSHOT_TAG: "Last_$(APPVEYOR_PROJECT_NAME)_PreBuild"
   SEC_ACCESS_TOKEN:
-        secure: GXsXxwHSSt1y+ae3C6A0csN+dCQxPW8w98SGwl8cqzqPDhKKbvFJ37eJCCDeNIm2
+        secure: S/uWHxf+h2BsnfTWw9tSKApYFejatWCC72nUXmuCFXgNmjUz0ODSCU40c3n/7kMx
 
 # build configuration, i.e. Debug, Release, etc.
 configuration:
@@ -71,7 +71,7 @@ before_build:
   - cmd: set BUILD_DIR="%APPVEYOR_BUILD_FOLDER%\BuildDir"
   - cmd: mkdir "%BUILD_DIR%"
   - cmd: cd "%BUILD_DIR%"
-  - cmd: cmake -G "Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=/"%APPVEYOR_BUILD_FOLDER%"/installed -DBUILD_EXTRACTORS=ON ..
+  - cmd: cmake -G "Visual Studio 14 2015" -DCMAKE_INSTALL_PREFIX=/"%APPVEYOR_BUILD_FOLDER%"/installed -DBUILD_EXTRACTORS=ON ..
 
 # build script
 build_script:
