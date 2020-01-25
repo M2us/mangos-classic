@@ -152,6 +152,7 @@ enum LocaleConstant
     LOCALE_ruRU = 8
 };
 
+#define DEFAULT_LOCALE LOCALE_enUS
 #define MAX_DBC_LOCALE 8
 #define MAX_LOCALE 9
 
